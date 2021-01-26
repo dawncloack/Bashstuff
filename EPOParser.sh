@@ -64,7 +64,7 @@ printf "\n\t-i\t      Count the times each inventor or group of inventors appear
 printf "\n\t-a\t      Count the times an applicant or group of applicants appears."
 printf "\n\t-I\t      Count the times a specific grouping of IPC numbers appears."
 printf "\n\t-C\t      Count the times a specific grouping of CPC numbers appears."
-printf "\n\n\tThe dissagregation modifier \"x\" after eac of the above options tries to split the entries. -Ix, for instance, it will count the number of times each IPC number appears, instead of the groupings of IPC numbers. -tx it will count individual words in titles, and not the appeareance of each full title."
+printf "\n\n\tThe dissagregation modifier \"x\" after each of the above options tries to split the entries. -Ix, for instance, it will count the number of times each IPC number appears, instead of the groupings of IPC numbers in a specific patent. -tx it will count individual words in titles, and not the appeareance of each full title."
 printf "\n\n\t${bold}Exceptions: ${normal}"
 printf "\n\n\tThe \"x\" option does not work with the -a option, and is unreliable with the -i options. The reason is that there is no consistent pattern to dissagreggate inventor and applicant names."
 printf "\n\n\t${bold}Date options:${normal}"
@@ -273,12 +273,6 @@ do
 
         echo "An $1 option has been read from the arguments. This should not happen. Please take a screenshot of what you were doing and send it to the developer."
         shift
-        ;;
-
-    --version)
-
-        version
-        exit 0 # If the version is requested, the program terminates successfully. Same for usage.
         ;;
 
     --help)
@@ -566,6 +560,12 @@ function cleanup
 
 
 # XXXX Main XXXX
+
+if [[ "$@" == '--help' ]]
+then
+    usage
+    exit 0
+fi
 
 initFileCount # We check that there are Espacenet files
 
