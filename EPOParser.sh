@@ -574,7 +574,7 @@ win2unix # We transform them to the easy-to-parse format
 
 argParser "$@" # We parse the script arguments. It uses the script's arguments, but they need to be passed on explicitely
 
-trap cleanup EXIT SIGHUP # Only after this step does the cleanup function become relevant. Before, the unixed files haven't been created. This activates at EXIT and SIGnal Hung UP
+trap cleanup EXIT SIGHUP SIGINT SIGTERM ERR # Only after this step does the cleanup function become relevant. Before, the unixed files haven't been created. This activates at EXIT and SIGnal Hung UP or other error conditions
 
 declare -a headerSpace # Array of the file headers
 declare -i fileCount=0
