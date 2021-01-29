@@ -3,7 +3,7 @@
 : '
 EPOParser -  a script that extracts statistical information from Espacenet CSV files.
 
-    Copyright (C) 2020  Pablo Cañamares
+    Copyright (C) 2021  Pablo Cañamares
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@ EPOParser -  a script that extracts statistical information from Espacenet CSV f
 
 function version
 {
-printf "\nEPO Parser 1.0\nA script to parse statistical information from Espacenet files."
+printf "\nEPO Parser 1.0.1\nA script to parse statistical information from Espacenet files."
 printf "\nEPOParser.sh  Copyright (C) 2021  Pablo Cañamares"
 printf "\n\nThis program comes with ABSOLUTELY NO WARRANTY"
 printf "\n\nSoftware under GNU GPL v3.0 License."
