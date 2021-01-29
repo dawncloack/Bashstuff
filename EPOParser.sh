@@ -23,9 +23,10 @@ EPOParser -  a script that extracts statistical information from Espacenet CSV f
 function version
 {
 printf "\nEPO Parser 1.0\nA script to parse statistical information from Espacenet files."
-printf "\n\nEPOParser.sh  Copyright (C) 2020  Pablo Cañamares"
+printf "\nEPOParser.sh  Copyright (C) 2021  Pablo Cañamares"
 printf "\n\nThis program comes with ABSOLUTELY NO WARRANTY"
-printf "\n\nThis is free software, and you are welcome to redistribute it under certain conditions;\nFor details please consult <https://www.gnu.org/licenses/>\n\n"
+printf "\n\nSoftware under GNU GPL v3.0 License."
+printf "\nThis is free software, and you are welcome to redistribute it under certain conditions;\nFor details please consult <https://www.gnu.org/licenses/>\n\n"
 }
 
 
@@ -278,6 +279,12 @@ do
     --help)
 
         usage
+        exit 0
+        ;;
+
+    --version)
+
+        version
         exit 0
         ;;
 
@@ -560,12 +567,6 @@ function cleanup
 
 
 # XXXX Main XXXX
-
-if [[ "$@" == '--help' ]]
-then
-    usage
-    exit 0
-fi
 
 initFileCount # We check that there are Espacenet files
 
